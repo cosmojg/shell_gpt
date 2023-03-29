@@ -12,7 +12,7 @@ class TestMain(unittest.TestCase):
     # TODO: Fix tests.
 
     def setUp(self):
-        self.api_key = os.getenv("OPENAI_API_KEY")
+        self.api_key = os.environ["OPENAI_API_KEY"] = "test key"
         assert self.api_key, "OPENAI_API_KEY ENV is required."
         self.prompt = "What is the capital of France?"
         self.shell = False

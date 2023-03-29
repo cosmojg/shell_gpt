@@ -133,3 +133,7 @@ class ChatCache:
         files = self.storage_path.glob("*")
         # Sort files by last modification time in ascending order.
         return sorted(files, key=lambda f: f.stat().st_mtime)
+
+    def purge(self):
+        for file in self.list():
+            file.unlink()
